@@ -87,15 +87,15 @@ function BlastRadiusContent() {
           <Zap size={20} color="#ef4444" />
           <h1 style={{ fontSize: 24, fontWeight: 700 }}>Blast Radius Analyzer</h1>
         </div>
-        <p style={{ color: "#64748b", fontSize: 14, margin: 0 }}>
+        <p style={{ color: "#6b7280", fontSize: 14, margin: 0 }}>
           Given a vulnerable package, find every root app affected and the path through which it's reached
         </p>
       </div>
 
       {/* Controls */}
-      <div className="glass-card" style={{ padding: "20px 24px", marginBottom: 24, display: "flex", gap: 12, flexWrap: "wrap", alignItems: "flex-end" }}>
+      <div className="minimal-card" style={{ padding: "20px 24px", marginBottom: 24, display: "flex", gap: 12, flexWrap: "wrap", alignItems: "flex-end" }}>
         <div style={{ flex: 1, minWidth: 240 }}>
-          <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
+          <label style={{ fontSize: 12, color: "#6b7280", display: "block", marginBottom: 6 }}>
             Vulnerable / target package
           </label>
           <input
@@ -136,8 +136,8 @@ function BlastRadiusContent() {
           {/* Summary banner */}
           <div
             style={{
-              background: data.results.length > 0 ? "rgba(239,68,68,0.08)" : "rgba(16,185,129,0.08)",
-              border: `1px solid ${data.results.length > 0 ? "rgba(239,68,68,0.25)" : "rgba(16,185,129,0.25)"}`,
+              background: data.results.length > 0 ? ""rgba(0,0,0,0.05)"" : ""rgba(0,0,0,0.05)"",
+              border: `1px solid ${data.results.length > 0 ? ""rgba(0,0,0,0.05)"" : ""rgba(0,0,0,0.05)""}`,
               borderRadius: 14,
               padding: "16px 24px",
               marginBottom: 24,
@@ -157,7 +157,7 @@ function BlastRadiusContent() {
                   ? `${data.results.length} root package${data.results.length > 1 ? "s" : ""} affected`
                   : "No affected packages found"}
               </div>
-              <div style={{ fontSize: 13, color: "#94a3b8", marginTop: 2 }}>
+              <div style={{ fontSize: 13, color: "#4b5563", marginTop: 2 }}>
                 {data.results.length > 0
                   ? `A compromise of "${packageName}" would impact ${data.results.length} upstream package${data.results.length > 1 ? "s" : ""}`
                   : `"${packageName}" has no dependents in the graph`}
@@ -193,35 +193,35 @@ function BlastRadiusContent() {
 
             {/* Results list */}
             <div
-              className="glass-card"
+              className="minimal-card"
               style={{ padding: "16px 20px", maxHeight: 560, overflowY: "auto" }}
             >
-              <div style={{ fontWeight: 600, fontSize: 13, color: "#94a3b8", marginBottom: 14 }}>
+              <div style={{ fontWeight: 600, fontSize: 13, color: "#4b5563", marginBottom: 14 }}>
                 AFFECTED PACKAGES
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {data.results.length === 0 ? (
-                  <div style={{ color: "#475569", fontSize: 13, textAlign: "center", padding: "24px 0" }}>
+                  <div style={{ color: "#374151", fontSize: 13, textAlign: "center", padding: "24px 0" }}>
                     No affected packages
                   </div>
                 ) : (
                   data.results.map((result, i) => (
                     <div
                       key={i}
-                      className="glass-card"
+                      className="minimal-card"
                       style={{
                         padding: "14px 16px",
                         cursor: "pointer",
-                        border: highlightPath === result.pathNodes ? "1px solid rgba(239,68,68,0.4)" : undefined,
+                        border: highlightPath === result.pathNodes ? "1px solid "rgba(0,0,0,0.05)"" : undefined,
                         transition: "all 0.2s",
                       }}
                       onClick={() => setHighlightPath(result.pathNodes)}
                     >
                       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-                        <div style={{ fontWeight: 600, fontSize: 13, color: "#f1f5f9" }}>
+                        <div style={{ fontWeight: 600, fontSize: 13, color: "#000000" }}>
                           {result.affectedRoot}
                         </div>
-                        <span style={{ fontSize: 11, color: "#475569" }}>
+                        <span style={{ fontSize: 11, color: "#374151" }}>
                           {result.pathLength} hop{result.pathLength > 1 ? "s" : ""}
                         </span>
                       </div>
@@ -231,7 +231,7 @@ function BlastRadiusContent() {
                           <span className={`badge ${SEVERITY_BADGE[result.vulnerability.severity]}`}>
                             {result.vulnerability.severity}
                           </span>
-                          <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4, lineHeight: 1.5 }}>
+                          <div style={{ fontSize: 11, color: "#4b5563", marginTop: 4, lineHeight: 1.5 }}>
                             {result.vulnerability.summary}
                           </div>
                         </div>
@@ -245,7 +245,7 @@ function BlastRadiusContent() {
                                 fontSize: 10,
                                 fontFamily: "var(--font-mono)",
                                 color: node === packageName ? "#ef4444" : "#64748b",
-                                background: node === packageName ? "rgba(239,68,68,0.1)" : "rgba(255,255,255,0.04)",
+                                background: node === packageName ? ""rgba(0,0,0,0.05)"" : "rgba(255,255,255,0.04)",
                                 padding: "2px 6px",
                                 borderRadius: 4,
                               }}
@@ -258,7 +258,7 @@ function BlastRadiusContent() {
                           </span>
                         ))}
                         {result.pathNodes.length > 4 && (
-                          <span style={{ fontSize: 10, color: "#475569" }}>
+                          <span style={{ fontSize: 10, color: "#374151" }}>
                             +{result.pathNodes.length - 4} more
                           </span>
                         )}
@@ -286,8 +286,8 @@ function BlastRadiusContent() {
       )}
 
       {!loading && !data && !error && (
-        <div className="glass-card" style={{ padding: 48, textAlign: "center", color: "#475569" }}>
-          <Zap size={32} style={{ margin: "0 auto 12px", color: "#334155" }} />
+        <div className="minimal-card" style={{ padding: 48, textAlign: "center", color: "#374151" }}>
+          <Zap size={32} style={{ margin: "0 auto 12px", color: "#111827" }} />
           Enter a package name to analyze its blast radius
         </div>
       )}

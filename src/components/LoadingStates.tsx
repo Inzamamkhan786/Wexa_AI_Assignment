@@ -2,12 +2,12 @@
 
 export function LoadingSpinner({ size = 20, label = "Loading..." }: { size?: number; label?: string }) {
   return (
-    <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#94a3b8" }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#4b5563" }}>
       <div
         style={{
           width: size,
           height: size,
-          border: `2px solid rgba(99,102,241,0.2)`,
+          border: `2px solid "rgba(0,0,0,0.1)"`,
           borderTopColor: "#6366f1",
           borderRadius: "50%",
           animation: "spin 0.8s linear infinite",
@@ -44,13 +44,13 @@ export function PageLoader() {
         style={{
           width: 48,
           height: 48,
-          border: "3px solid rgba(99,102,241,0.2)",
+          border: "3px solid "rgba(0,0,0,0.1)"",
           borderTopColor: "#6366f1",
           borderRadius: "50%",
           animation: "spin 0.8s linear infinite",
         }}
       />
-      <div style={{ color: "#94a3b8", fontSize: 14 }}>Loading graph data…</div>
+      <div style={{ color: "#4b5563", fontSize: 14 }}>Loading graph data…</div>
     </div>
   );
 }

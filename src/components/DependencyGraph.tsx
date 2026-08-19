@@ -45,7 +45,7 @@ export function DependencyGraph({
   const getNodeColor = useCallback(
     (node: GraphNode) => {
       if (highlightNodes && !highlightNodes.has(node.id)) {
-        return "rgba(99,102,241,0.15)";
+        return ""rgba(0,0,0,0.1)"";
       }
       return NODE_COLORS[node.type] ?? "#3b82f6";
     },
@@ -136,11 +136,11 @@ export function DependencyGraph({
             onClick={onClick}
             style={{
               background: "rgba(15,21,34,0.85)",
-              border: "1px solid rgba(255,255,255,0.1)",
+              border: "1px solid "rgba(0,0,0,0.1)"",
               borderRadius: 8,
               padding: 7,
               cursor: "pointer",
-              color: "#94a3b8",
+              color: "#4b5563",
               display: "flex",
               alignItems: "center",
               backdropFilter: "blur(8px)",
@@ -172,7 +172,7 @@ export function DependencyGraph({
         {Object.entries(NODE_COLORS).map(([type, color]) => (
           <div key={type} style={{ display: "flex", alignItems: "center", gap: 5 }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: color }} />
-            <span style={{ fontSize: 10, color: "#94a3b8", textTransform: "capitalize" }}>{type}</span>
+            <span style={{ fontSize: 10, color: "#4b5563", textTransform: "capitalize" }}>{type}</span>
           </div>
         ))}
       </div>
@@ -189,10 +189,10 @@ export function DependencyGraph({
             pointerEvents: "none",
           }}
         >
-          <div style={{ fontWeight: 600, color: "#f1f5f9", marginBottom: 2 }}>{hoveredNode.label}</div>
-          <div style={{ fontSize: 11, color: "#94a3b8" }}>Type: {hoveredNode.type}</div>
+          <div style={{ fontWeight: 600, color: "#000000", marginBottom: 2 }}>{hoveredNode.label}</div>
+          <div style={{ fontSize: 11, color: "#4b5563" }}>Type: {hoveredNode.type}</div>
           {hoveredNode.data?.version !== undefined && (
-            <div style={{ fontSize: 11, color: "#94a3b8" }}>v{String(hoveredNode.data.version)}</div>
+            <div style={{ fontSize: 11, color: "#4b5563" }}>v{String(hoveredNode.data.version)}</div>
           )}
         </div>
       )}

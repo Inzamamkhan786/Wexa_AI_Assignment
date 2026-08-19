@@ -14,8 +14,8 @@ export function ErrorBanner({ message, code, onRetry }: ErrorBannerProps) {
   return (
     <div
       style={{
-        background: "rgba(239, 68, 68, 0.08)",
-        border: "1px solid rgba(239, 68, 68, 0.25)",
+        background: ""rgba(0,0,0,0.05)"",
+        border: "1px solid "rgba(0,0,0,0.05)"",
         borderRadius: 14,
         padding: "16px 20px",
         display: "flex",
@@ -32,12 +32,12 @@ export function ErrorBanner({ message, code, onRetry }: ErrorBannerProps) {
         )}
       </div>
       <div style={{ flex: 1 }}>
-        <div style={{ fontSize: 14, fontWeight: 600, color: "#ef4444", marginBottom: 2 }}>
+        <div style={{ fontSize: 14, fontWeight: 600, color: "#000000", marginBottom: 2 }}>
           {isDbError ? "Database Unreachable" : "Error"}
         </div>
         <div style={{ fontSize: 13, color: "#fca5a5", lineHeight: 1.5 }}>{message}</div>
         {isDbError && (
-          <div style={{ fontSize: 12, color: "#94a3b8", marginTop: 6 }}>
+          <div style={{ fontSize: 12, color: "#4b5563", marginTop: 6 }}>
             Check that your CognoDB instance is running and environment variables are configured.
           </div>
         )}

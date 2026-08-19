@@ -4,36 +4,36 @@
 
 :root {
   /* Color tokens */
-  --bg-primary: #0a0d14;
-  --bg-secondary: #0f1522;
-  --bg-card: #131a2a;
-  --bg-card-hover: #1a2235;
-  --bg-glass: rgba(19, 26, 42, 0.7);
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f3f4f6;
+  --bg-glass: #ffffff;
 
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-glow: rgba(99, 102, 241, 0.4);
+  --border-subtle: #e5e7eb;
+  --border-glow: #000000;
 
-  --accent-primary: #6366f1;
-  --accent-secondary: #8b5cf6;
-  --accent-danger: #ef4444;
-  --accent-warning: #f59e0b;
-  --accent-success: #10b981;
-  --accent-info: #3b82f6;
+  --accent-primary: #000000;
+  --accent-secondary: #374151;
+  --accent-danger: #000000;
+  --accent-warning: #000000;
+  --accent-success: #000000;
+  --accent-info: #000000;
 
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #475569;
+  --text-primary: #000000;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
 
-  --severity-critical: #ef4444;
-  --severity-high: #f97316;
-  --severity-moderate: #f59e0b;
-  --severity-low: #10b981;
+  --severity-critical: #000000;
+  --severity-high: #374151;
+  --severity-moderate: #6b7280;
+  --severity-low: #9ca3af;
 
-  --node-root: #6366f1;
-  --node-package: #3b82f6;
-  --node-deprecated: #ef4444;
-  --node-target: #f97316;
-  --node-vuln: #ef4444;
+  --node-root: #000000;
+  --node-package: #6b7280;
+  --node-deprecated: #374151;
+  --node-target: #000000;
+  --node-vuln: #111827;
 
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -71,13 +71,11 @@ body {
   background: var(--text-secondary);
 }
 
-/* Glass morphism card */
+/* Solid card */
 .glass-card {
-  background: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--bg-card);
   border: 1px solid var(--border-subtle);
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .glass-card:hover {
@@ -85,34 +83,27 @@ body {
   transition: border-color 0.2s ease;
 }
 
-/* Glow effects */
+/* Glow effects removed */
 .glow-primary {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  box-shadow: none;
 }
 
 .glow-danger {
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  box-shadow: none;
 }
 
-/* Gradient text */
+/* Solid text */
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
 .gradient-text-danger {
-  background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
 }
 
-/* Animated gradient background */
+/* Solid background */
 .animated-bg {
-  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
-              radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139, 92, 246, 0.08), transparent);
+  background: var(--bg-primary);
 }
 
 /* Badge */
@@ -127,17 +118,17 @@ body {
   text-transform: uppercase;
 }
 
-.badge-critical { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3); }
-.badge-high { background: rgba(249, 115, 22, 0.15); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
-.badge-moderate { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3); }
-.badge-low { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
-.badge-info { background: rgba(99, 102, 241, 0.15); color: #6366f1; border: 1px solid rgba(99, 102, 241, 0.3); }
-.badge-success { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-critical { background: #f3f4f6; color: #000000; border: 1px solid #e5e7eb; }
+.badge-high { background: #f3f4f6; color: #000000; border: 1px solid #e5e7eb; }
+.badge-moderate { background: #f3f4f6; color: #000000; border: 1px solid #e5e7eb; }
+.badge-low { background: #f3f4f6; color: #000000; border: 1px solid #e5e7eb; }
+.badge-info { background: #f3f4f6; color: #000000; border: 1px solid #e5e7eb; }
+.badge-success { background: #f3f4f6; color: #000000; border: 1px solid #e5e7eb; }
 
-/* Pulse animation */
+/* Pulse animation removed */
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 8px rgba(99, 102, 241, 0.4); }
-  50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.7); }
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: none; }
 }
 
 @keyframes spin {
@@ -195,13 +186,13 @@ body {
 
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: var(--accent-primary);
   color: white;
   border: none;
-  border-radius: 12px;
-  padding: 12px 24px;
+  border-radius: 8px;
+  padding: 10px 20px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
@@ -211,7 +202,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+  background: var(--accent-secondary);
 }
 
 .btn-primary:active {
@@ -246,13 +237,13 @@ body {
 }
 
 .btn-danger {
-  background: rgba(239, 68, 68, 0.15);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  border-radius: 12px;
+  background: #f3f4f6;
+  color: #000000;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
   padding: 10px 20px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
@@ -261,8 +252,8 @@ body {
 }
 
 .btn-danger:hover {
-  background: rgba(239, 68, 68, 0.25);
-  box-shadow: 0 4px 16px rgba(239, 68, 68, 0.25);
+  background: var(--bg-secondary);
+  border-color: var(--border-glow);
 }
 
 /* Code font */
@@ -380,10 +371,10 @@ body {
 .risk-bar-fill {
   height: 100%;
   border-radius: 3px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background: #000000;
   transition: width 0.6s ease;
 }
 
 .risk-bar-fill.danger {
-  background: linear-gradient(90deg, #ef4444, #f97316);
+  background: #000000;
 }

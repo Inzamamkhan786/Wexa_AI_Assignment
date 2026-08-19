@@ -73,7 +73,7 @@ export default function RiskPage() {
             <BarChart3 size={20} color="#f59e0b" />
             <h1 style={{ fontSize: 24, fontWeight: 700 }}>Risk Ranking</h1>
           </div>
-          <p style={{ color: "#64748b", fontSize: 14, margin: 0 }}>
+          <p style={{ color: "#6b7280", fontSize: 14, margin: 0 }}>
             The packages with the most upstream dependents — a compromise here would cascade the furthest
           </p>
         </div>
@@ -85,12 +85,12 @@ export default function RiskPage() {
 
       {/* "Why this matters" callout */}
       <div
-        className="glass-card"
+        className="minimal-card"
         style={{
           padding: "16px 20px",
           marginBottom: 28,
-          background: "rgba(245,158,11,0.05)",
-          borderColor: "rgba(245,158,11,0.2)",
+          background: ""rgba(0,0,0,0.05)"",
+          borderColor: ""rgba(0,0,0,0.05)"",
           display: "flex",
           gap: 12,
           alignItems: "flex-start",
@@ -98,13 +98,13 @@ export default function RiskPage() {
       >
         <TrendingUp size={18} color="#f59e0b" style={{ flexShrink: 0, marginTop: 1 }} />
         <div>
-          <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 4, color: "#f59e0b" }}>
+          <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 4, color: "#000000" }}>
             Why this is hard in SQL
           </div>
-          <div style={{ fontSize: 12, color: "#94a3b8", lineHeight: 1.7 }}>
+          <div style={{ fontSize: 12, color: "#4b5563", lineHeight: 1.7 }}>
             Counting <em>all transitive dependents</em> of every package in a relational DB requires
             recursive CTEs with multiple self-joins — extremely slow at scale. In CognoDB, this is a
-            single native traversal with <code style={{ fontFamily: "var(--font-mono)", color: "#a78bfa" }}>
+            single native traversal with <code style={{ fontFamily: "var(--font-mono)", color: "#4b5563" }}>
               MATCH (dep)&lt;-[:DEPENDS_ON*]-() RETURN dep, count(*)
             </code>
           </div>
@@ -122,8 +122,8 @@ export default function RiskPage() {
       {!loading && data && (
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           {data.length === 0 ? (
-            <div className="glass-card" style={{ padding: 48, textAlign: "center", color: "#475569" }}>
-              <BarChart3 size={32} style={{ margin: "0 auto 12px", color: "#334155" }} />
+            <div className="minimal-card" style={{ padding: 48, textAlign: "center", color: "#374151" }}>
+              <BarChart3 size={32} style={{ margin: "0 auto 12px", color: "#111827" }} />
               No data yet — run the seed script first
             </div>
           ) : (
@@ -138,7 +138,7 @@ export default function RiskPage() {
                   className="glass-card animate-fade-in-up"
                   style={{
                     padding: "18px 22px",
-                    border: isDangerous ? "1px solid rgba(239,68,68,0.25)" : undefined,
+                    border: isDangerous ? "1px solid "rgba(0,0,0,0.05)"" : undefined,
                     cursor: "pointer",
                     transition: "all 0.2s",
                   }}
@@ -174,7 +174,7 @@ export default function RiskPage() {
                     {/* Name */}
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 2 }}>
-                        <span style={{ fontWeight: 700, fontSize: 15, color: "#f1f5f9" }}>
+                        <span style={{ fontWeight: 700, fontSize: 15, color: "#000000" }}>
                           {entry.name}
                         </span>
                         {isDangerous && severity && (
@@ -187,7 +187,7 @@ export default function RiskPage() {
                           </span>
                         )}
                         {!isDangerous && (
-                          <span style={{ fontSize: 10, color: "#10b981", display: "flex", alignItems: "center", gap: 3 }}>
+                          <span style={{ fontSize: 10, color: "#000000", display: "flex", alignItems: "center", gap: 3 }}>
                             <Shield size={9} /> clean
                           </span>
                         )}
@@ -195,7 +195,7 @@ export default function RiskPage() {
                       <div
                         style={{
                           fontSize: 12,
-                          color: "#64748b",
+                          color: "#6b7280",
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           whiteSpace: "nowrap",
@@ -210,7 +210,7 @@ export default function RiskPage() {
                       <div style={{ fontSize: 22, fontWeight: 700, color: isDangerous ? "#ef4444" : "#6366f1", lineHeight: 1 }}>
                         {entry.dependentCount}
                       </div>
-                      <div style={{ fontSize: 10, color: "#475569" }}>dependents</div>
+                      <div style={{ fontSize: 10, color: "#374151" }}>dependents</div>
                     </div>
                   </div>
 
@@ -235,9 +235,9 @@ export default function RiskPage() {
                           key={v.id}
                           style={{
                             fontSize: 11,
-                            color: "#94a3b8",
-                            background: "rgba(239,68,68,0.06)",
-                            border: "1px solid rgba(239,68,68,0.12)",
+                            color: "#4b5563",
+                            background: ""rgba(0,0,0,0.05)"",
+                            border: "1px solid "rgba(0,0,0,0.05)"",
                             borderRadius: 6,
                             padding: "3px 8px",
                           }}

@@ -71,18 +71,18 @@ function ExploreContent() {
           <GitBranch size={20} color="#6366f1" />
           <h1 style={{ fontSize: 24, fontWeight: 700 }}>Dependency Explorer</h1>
         </div>
-        <p style={{ color: "#64748b", fontSize: 14, margin: 0 }}>
+        <p style={{ color: "#6b7280", fontSize: 14, margin: 0 }}>
           Visualize the full transitive dependency tree as an interactive graph
         </p>
       </div>
 
       {/* Controls */}
       <div
-        className="glass-card"
+        className="minimal-card"
         style={{ padding: "20px 24px", marginBottom: 24, display: "flex", gap: 12, flexWrap: "wrap", alignItems: "flex-end" }}
       >
         <div style={{ flex: 1, minWidth: 240 }}>
-          <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
+          <label style={{ fontSize: 12, color: "#6b7280", display: "block", marginBottom: 6 }}>
             Package name
           </label>
           <input
@@ -95,7 +95,7 @@ function ExploreContent() {
           />
         </div>
         <div style={{ minWidth: 140 }}>
-          <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
+          <label style={{ fontSize: 12, color: "#6b7280", display: "block", marginBottom: 6 }}>
             Max hops (depth)
           </label>
           <select
@@ -106,7 +106,7 @@ function ExploreContent() {
             style={{ cursor: "pointer" }}
           >
             {[1, 2, 3, 4, 5, 6].map((n) => (
-              <option key={n} value={n} style={{ background: "#131a2a" }}>
+              <option key={n} value={n} style={{ background: "#ffffff" }}>
                 {n} hop{n > 1 ? "s" : ""}
               </option>
             ))}
@@ -143,8 +143,8 @@ function ExploreContent() {
             {stats && (
               <div style={{ display: "flex", gap: 12, marginBottom: 14 }}>
                 {[
-                  { label: "Packages", value: stats.total, color: "#6366f1" },
-                  { label: "Dependencies", value: stats.links, color: "#3b82f6" },
+                  { label: "Packages", value: stats.total, color: "#000000" },
+                  { label: "Dependencies", value: stats.links, color: "#000000" },
                   { label: "Deprecated", value: stats.deprecated, color: stats.deprecated > 0 ? "#ef4444" : "#475569" },
                 ].map((s) => (
                   <div className="stat-card" key={s.label} style={{ flex: 1 }}>
@@ -165,7 +165,7 @@ function ExploreContent() {
           {/* Sidebar */}
           <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
             {selectedNode ? (
-              <div className="glass-card" style={{ padding: "20px" }}>
+              <div className="minimal-card" style={{ padding: "20px" }}>
                 <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 4 }}>{selectedNode.label}</div>
                 <span
                   className={`badge badge-${selectedNode.type === "deprecated" ? "critical" : selectedNode.type === "root" ? "info" : "success"}`}
@@ -174,20 +174,20 @@ function ExploreContent() {
                   {selectedNode.type}
                 </span>
                 {selectedNode.data.version !== undefined && (
-                  <div style={{ fontSize: 13, color: "#64748b", marginBottom: 8 }}>
+                  <div style={{ fontSize: 13, color: "#6b7280", marginBottom: 8 }}>
                     Version:{" "}
-                    <span style={{ color: "#f1f5f9", fontFamily: "var(--font-mono)", fontSize: 12 }}>
+                    <span style={{ color: "#000000", fontFamily: "var(--font-mono)", fontSize: 12 }}>
                       v{String(selectedNode.data.version)}
                     </span>
                   </div>
                 )}
                 {selectedNode.data.description !== undefined && (
-                  <div style={{ fontSize: 12, color: "#64748b", lineHeight: 1.6 }}>
+                  <div style={{ fontSize: 12, color: "#6b7280", lineHeight: 1.6 }}>
                     {String(selectedNode.data.description)}
                   </div>
                 )}
                 {selectedNode.type === "deprecated" && (
-                  <div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: 10, color: "#ef4444", fontSize: 12 }}>
+                  <div style={{ display: "flex", gap: 6, alignItems: "center", marginTop: 10, color: "#000000", fontSize: 12 }}>
                     <AlertTriangle size={12} />
                     This version is deprecated
                   </div>
@@ -210,17 +210,17 @@ function ExploreContent() {
                 </div>
               </div>
             ) : (
-              <div className="glass-card" style={{ padding: 20 }}>
-                <div style={{ color: "#475569", fontSize: 13, textAlign: "center" }}>
-                  <Package size={28} style={{ margin: "0 auto 8px", color: "#334155" }} />
+              <div className="minimal-card" style={{ padding: 20 }}>
+                <div style={{ color: "#374151", fontSize: 13, textAlign: "center" }}>
+                  <Package size={28} style={{ margin: "0 auto 8px", color: "#111827" }} />
                   Click a node to inspect it
                 </div>
               </div>
             )}
 
             {/* Node list */}
-            <div className="glass-card" style={{ padding: "16px 20px", flex: 1, overflow: "hidden" }}>
-              <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: "#94a3b8" }}>
+            <div className="minimal-card" style={{ padding: "16px 20px", flex: 1, overflow: "hidden" }}>
+              <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 12, color: "#4b5563" }}>
                 PACKAGES ({graph.nodes.length})
               </div>
               <div style={{ maxHeight: 320, overflowY: "auto", display: "flex", flexDirection: "column", gap: 4 }}>
@@ -235,7 +235,7 @@ function ExploreContent() {
                       padding: "6px 8px",
                       borderRadius: 8,
                       cursor: "pointer",
-                      background: selectedNode?.id === node.id ? "rgba(99,102,241,0.1)" : "transparent",
+                      background: selectedNode?.id === node.id ? ""rgba(0,0,0,0.1)"" : "transparent",
                       transition: "background 0.15s",
                     }}
                   >
@@ -256,7 +256,7 @@ function ExploreContent() {
                     <span
                       style={{
                         fontSize: 12,
-                        color: "#94a3b8",
+                        color: "#4b5563",
                         fontFamily: "var(--font-mono)",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
@@ -277,8 +277,8 @@ function ExploreContent() {
       )}
 
       {!loading && !graph && !error && packageName && (
-        <div className="glass-card" style={{ padding: 48, textAlign: "center", color: "#475569" }}>
-          <ChevronRight size={32} style={{ margin: "0 auto 12px", color: "#334155" }} />
+        <div className="minimal-card" style={{ padding: 48, textAlign: "center", color: "#374151" }}>
+          <ChevronRight size={32} style={{ margin: "0 auto 12px", color: "#111827" }} />
           Enter a package name to begin
         </div>
       )}

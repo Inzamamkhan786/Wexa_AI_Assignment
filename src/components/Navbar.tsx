@@ -18,9 +18,9 @@ export function Navbar() {
   return (
     <nav
       style={{
-        background: "rgba(10, 13, 20, 0.85)",
+        background: "rgba(255, 255, 255, 0.9)",
         backdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(255,255,255,0.06)",
+        borderBottom: "1px solid #e5e7eb",
         position: "sticky",
         top: 0,
         zIndex: 100,
@@ -43,7 +43,7 @@ export function Navbar() {
             style={{
               width: 36,
               height: 36,
-              background: "linear-gradient(135deg, #6366f1, #8b5cf6)",
+              background: "#000000",
               borderRadius: 10,
               display: "flex",
               alignItems: "center",
@@ -53,10 +53,10 @@ export function Navbar() {
             <GitBranch size={18} color="white" />
           </div>
           <div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: "#f1f5f9", lineHeight: 1.1 }}>
+            <div style={{ fontSize: 15, fontWeight: 700, color: "#000000", lineHeight: 1.1 }}>
               Blast Radius
             </div>
-            <div style={{ fontSize: 11, color: "#6366f1", fontWeight: 500, letterSpacing: "0.05em" }}>
+            <div style={{ fontSize: 11, color: "#000000", fontWeight: 500, letterSpacing: "0.05em" }}>
               NPM EXPLORER
             </div>
           </div>
@@ -79,8 +79,8 @@ export function Navbar() {
                   fontSize: 13,
                   fontWeight: isActive ? 600 : 400,
                   color: isActive ? "#f1f5f9" : "#94a3b8",
-                  background: isActive ? "rgba(99,102,241,0.15)" : "transparent",
-                  border: isActive ? "1px solid rgba(99,102,241,0.3)" : "1px solid transparent",
+                  background: isActive ? ""rgba(0,0,0,0.1)"" : "transparent",
+                  border: isActive ? "1px solid "rgba(0,0,0,0.1)"" : "1px solid transparent",
                   textDecoration: "none",
                   transition: "all 0.2s ease",
                 }}
@@ -96,9 +96,9 @@ export function Navbar() {
         <div
           style={{
             fontSize: 11,
-            color: "#10b981",
-            background: "rgba(16,185,129,0.1)",
-            border: "1px solid rgba(16,185,129,0.25)",
+            color: "#000000",
+            background: ""rgba(0,0,0,0.05)"",
+            border: "1px solid "rgba(0,0,0,0.05)"",
             borderRadius: 9999,
             padding: "3px 10px",
             fontWeight: 600,

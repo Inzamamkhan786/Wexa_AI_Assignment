@@ -21,25 +21,25 @@ const EXAMPLE_PACKAGES = ["express", "react", "next", "axios", "lodash", "webpac
 const FEATURES = [
   {
     icon: GitBranch,
-    color: "#6366f1",
+    color: "#000000",
     title: "Dependency Tree",
     desc: "Visualize multi-hop transitive dependencies as an interactive force graph",
   },
   {
     icon: Zap,
-    color: "#ef4444",
+    color: "#000000",
     title: "Blast Radius",
     desc: "Given a vulnerable package, instantly see every app that's affected and through which path",
   },
   {
     icon: ArrowLeftRight,
-    color: "#10b981",
+    color: "#000000",
     title: "Package Compare",
     desc: "Find shared dependencies between two packages and detect version conflicts",
   },
   {
     icon: BarChart3,
-    color: "#f59e0b",
+    color: "#000000",
     title: "Risk Ranking",
     desc: 'Find the "riskiest" single package — the one whose compromise would affect the most code',
   },
@@ -95,15 +95,15 @@ export default function HomePage() {
             display: "inline-flex",
             alignItems: "center",
             gap: 8,
-            background: "rgba(99,102,241,0.1)",
-            border: "1px solid rgba(99,102,241,0.25)",
+            background: ""rgba(0,0,0,0.1)"",
+            border: "1px solid "rgba(0,0,0,0.1)"",
             borderRadius: 9999,
             padding: "6px 16px",
             marginBottom: 24,
           }}
         >
           <Network size={12} color="#6366f1" />
-          <span style={{ fontSize: 12, color: "#6366f1", fontWeight: 600, letterSpacing: "0.08em" }}>
+          <span style={{ fontSize: 12, color: "#000000", fontWeight: 600, letterSpacing: "0.08em" }}>
             POWERED BY COGNODB GRAPH DATABASE
           </span>
         </div>
@@ -116,15 +116,15 @@ export default function HomePage() {
             marginBottom: 20,
           }}
         >
-          <span className="gradient-text">NPM Blast Radius</span>
+          <span className="solid-text">NPM Blast Radius</span>
           <br />
-          <span style={{ color: "#f1f5f9" }}>Explorer</span>
+          <span style={{ color: "#000000" }}>Explorer</span>
         </h1>
 
         <p
           style={{
             fontSize: 17,
-            color: "#94a3b8",
+            color: "#4b5563",
             maxWidth: 560,
             margin: "0 auto 40px",
             lineHeight: 1.7,
@@ -144,7 +144,7 @@ export default function HomePage() {
                 left: 14,
                 top: "50%",
                 transform: "translateY(-50%)",
-                color: "#475569",
+                color: "#374151",
                 pointerEvents: "none",
               }}
             />
@@ -172,7 +172,7 @@ export default function HomePage() {
 
         {/* Quick examples */}
         <div style={{ display: "flex", gap: 8, justifyContent: "center", marginTop: 14, flexWrap: "wrap" }}>
-          <span style={{ fontSize: 12, color: "#475569" }}>Try:</span>
+          <span style={{ fontSize: 12, color: "#374151" }}>Try:</span>
           {EXAMPLE_PACKAGES.map((pkg) => (
             <button
               key={pkg}
@@ -182,9 +182,9 @@ export default function HomePage() {
               }}
               style={{
                 fontSize: 12,
-                color: "#6366f1",
-                background: "rgba(99,102,241,0.08)",
-                border: "1px solid rgba(99,102,241,0.2)",
+                color: "#000000",
+                background: ""rgba(0,0,0,0.1)"",
+                border: "1px solid "rgba(0,0,0,0.1)"",
                 borderRadius: 6,
                 padding: "3px 10px",
                 cursor: "pointer",
@@ -211,12 +211,12 @@ export default function HomePage() {
           style={{
             textAlign: "center",
             padding: "48px 24px",
-            color: "#475569",
+            color: "#374151",
           }}
-          className="glass-card"
+          className="minimal-card"
         >
           <Package size={40} style={{ margin: "0 auto 12px", color: "#374151" }} />
-          <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, color: "#94a3b8" }}>
+          <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 8, color: "#4b5563" }}>
             No packages found
           </div>
           <div style={{ fontSize: 13 }}>
@@ -228,7 +228,7 @@ export default function HomePage() {
 
       {results.length > 0 && (
         <div style={{ display: "flex", flexDirection: "column", gap: 8, marginBottom: 48 }}>
-          <div style={{ fontSize: 13, color: "#475569", marginBottom: 4 }}>
+          <div style={{ fontSize: 13, color: "#374151", marginBottom: 4 }}>
             {results.length} result{results.length !== 1 ? "s" : ""} found
           </div>
           {results.map((pkg) => (
@@ -249,8 +249,8 @@ export default function HomePage() {
                 style={{
                   width: 38,
                   height: 38,
-                  background: "rgba(99,102,241,0.12)",
-                  border: "1px solid rgba(99,102,241,0.2)",
+                  background: ""rgba(0,0,0,0.1)"",
+                  border: "1px solid "rgba(0,0,0,0.1)"",
                   borderRadius: 10,
                   display: "flex",
                   alignItems: "center",
@@ -261,13 +261,13 @@ export default function HomePage() {
                 <Package size={16} color="#6366f1" />
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontWeight: 600, fontSize: 15, color: "#f1f5f9", marginBottom: 2 }}>
+                <div style={{ fontWeight: 600, fontSize: 15, color: "#000000", marginBottom: 2 }}>
                   {pkg.name}
                 </div>
                 <div
                   style={{
                     fontSize: 13,
-                    color: "#64748b",
+                    color: "#6b7280",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
                     whiteSpace: "nowrap",
@@ -330,29 +330,29 @@ export default function HomePage() {
                   <Icon size={20} color={color} />
                 </div>
                 <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 6 }}>{title}</div>
-                <div style={{ fontSize: 12, color: "#64748b", lineHeight: 1.6 }}>{desc}</div>
+                <div style={{ fontSize: 12, color: "#6b7280", lineHeight: 1.6 }}>{desc}</div>
               </div>
             ))}
           </div>
 
           {/* "Why graph?" callout */}
           <div
-            className="glass-card"
+            className="minimal-card"
             style={{
               padding: "28px 32px",
-              background: "rgba(99,102,241,0.05)",
-              borderColor: "rgba(99,102,241,0.2)",
+              background: ""rgba(0,0,0,0.1)"",
+              borderColor: ""rgba(0,0,0,0.1)"",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
               <Shield size={18} color="#6366f1" />
               <span style={{ fontWeight: 700, fontSize: 16 }}>Why a graph database?</span>
             </div>
-            <p style={{ color: "#94a3b8", fontSize: 13, lineHeight: 1.8, margin: 0 }}>
-              Dependency resolution is inherently <strong style={{ color: "#f1f5f9" }}>recursive many-to-many</strong>. In
+            <p style={{ color: "#4b5563", fontSize: 13, lineHeight: 1.8, margin: 0 }}>
+              Dependency resolution is inherently <strong style={{ color: "#000000" }}>recursive many-to-many</strong>. In
               SQL, answering "which root apps are transitively affected?" requires multi-level recursive CTEs
               that become slow and unreadable past 3 hops. In Cypher (CognoDB), it's a single traversal query.
-              Blast-radius and shortest-path are <strong style={{ color: "#f1f5f9" }}>native graph operations</strong>,
+              Blast-radius and shortest-path are <strong style={{ color: "#000000" }}>native graph operations</strong>,
               not workarounds.
             </p>
           </div>

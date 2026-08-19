@@ -69,16 +69,16 @@ function CompareContent() {
           <ArrowLeftRight size={20} color="#10b981" />
           <h1 style={{ fontSize: 24, fontWeight: 700 }}>Package Comparator</h1>
         </div>
-        <p style={{ color: "#64748b", fontSize: 14, margin: 0 }}>
+        <p style={{ color: "#6b7280", fontSize: 14, margin: 0 }}>
           Find shared dependencies, version conflicts, and the shortest dependency path between two packages
         </p>
       </div>
 
       {/* Controls */}
-      <div className="glass-card" style={{ padding: "24px", marginBottom: 28 }}>
+      <div className="minimal-card" style={{ padding: "24px", marginBottom: 28 }}>
         <div style={{ display: "grid", gridTemplateColumns: "1fr auto 1fr", gap: 16, alignItems: "flex-end" }}>
           <div>
-            <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
+            <label style={{ fontSize: 12, color: "#6b7280", display: "block", marginBottom: 6 }}>
               Package A
             </label>
             <input
@@ -95,8 +95,8 @@ function CompareContent() {
             style={{
               width: 36,
               height: 36,
-              background: "rgba(16,185,129,0.1)",
-              border: "1px solid rgba(16,185,129,0.25)",
+              background: ""rgba(0,0,0,0.05)"",
+              border: "1px solid "rgba(0,0,0,0.05)"",
               borderRadius: "50%",
               display: "flex",
               alignItems: "center",
@@ -109,7 +109,7 @@ function CompareContent() {
           </div>
 
           <div>
-            <label style={{ fontSize: 12, color: "#64748b", display: "block", marginBottom: 6 }}>
+            <label style={{ fontSize: 12, color: "#6b7280", display: "block", marginBottom: 6 }}>
               Package B
             </label>
             <input
@@ -148,8 +148,8 @@ function CompareContent() {
         <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
           {/* Shortest path */}
           {shortestPath && (
-            <div className="glass-card" style={{ padding: "20px 24px" }}>
-              <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 14, color: "#94a3b8" }}>
+            <div className="minimal-card" style={{ padding: "20px 24px" }}>
+              <div style={{ fontWeight: 600, fontSize: 14, marginBottom: 14, color: "#4b5563" }}>
                 SHORTEST PATH ({shortestPath.length} hops)
               </div>
               <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 6 }}>
@@ -158,9 +158,9 @@ function CompareContent() {
                     <span
                       className="path-node"
                       style={{
-                        borderColor: (node === pkgA || node === pkgB) ? "rgba(16,185,129,0.4)" : undefined,
+                        borderColor: (node === pkgA || node === pkgB) ? ""rgba(0,0,0,0.05)"" : undefined,
                         color: (node === pkgA || node === pkgB) ? "#10b981" : undefined,
-                        background: (node === pkgA || node === pkgB) ? "rgba(16,185,129,0.1)" : undefined,
+                        background: (node === pkgA || node === pkgB) ? ""rgba(0,0,0,0.05)"" : undefined,
                       }}
                     >
                       {node}
@@ -175,8 +175,8 @@ function CompareContent() {
           )}
 
           {!shortestPath && (
-            <div className="glass-card" style={{ padding: "16px 20px", borderColor: "rgba(245,158,11,0.2)", background: "rgba(245,158,11,0.04)" }}>
-              <div style={{ fontSize: 13, color: "#f59e0b" }}>
+            <div className="minimal-card" style={{ padding: "16px 20px", borderColor: ""rgba(0,0,0,0.05)"", background: ""rgba(0,0,0,0.05)"" }}>
+              <div style={{ fontSize: 13, color: "#000000" }}>
                 No direct or indirect dependency path found between these two packages.
               </div>
             </div>
@@ -185,9 +185,9 @@ function CompareContent() {
           {/* Stats */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 14 }}>
             {[
-              { label: "Shared Dependencies", value: sharedDeps.length, color: "#6366f1" },
+              { label: "Shared Dependencies", value: sharedDeps.length, color: "#000000" },
               { label: "Version Conflicts", value: conflicts.length, color: conflicts.length > 0 ? "#ef4444" : "#10b981" },
-              { label: "Compatible Deps", value: safe.length, color: "#10b981" },
+              { label: "Compatible Deps", value: safe.length, color: "#000000" },
             ].map((s) => (
               <div className="stat-card" key={s.label}>
                 <div className="stat-value" style={{ color: s.color }}>{s.value}</div>
@@ -198,8 +198,8 @@ function CompareContent() {
 
           {/* Conflicts first */}
           {conflicts.length > 0 && (
-            <div className="glass-card" style={{ padding: "20px 24px" }}>
-              <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 14, color: "#ef4444" }}>
+            <div className="minimal-card" style={{ padding: "20px 24px" }}>
+              <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 14, color: "#000000" }}>
                 ⚠ VERSION CONFLICTS ({conflicts.length})
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -212,8 +212,8 @@ function CompareContent() {
 
           {/* Compatible */}
           {safe.length > 0 && (
-            <div className="glass-card" style={{ padding: "20px 24px" }}>
-              <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 14, color: "#10b981" }}>
+            <div className="minimal-card" style={{ padding: "20px 24px" }}>
+              <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 14, color: "#000000" }}>
                 ✓ COMPATIBLE SHARED DEPENDENCIES ({safe.length})
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -225,8 +225,8 @@ function CompareContent() {
           )}
 
           {sharedDeps.length === 0 && (
-            <div className="glass-card" style={{ padding: 48, textAlign: "center", color: "#475569" }}>
-              <GitMerge size={32} style={{ margin: "0 auto 12px", color: "#334155" }} />
+            <div className="minimal-card" style={{ padding: 48, textAlign: "center", color: "#374151" }}>
+              <GitMerge size={32} style={{ margin: "0 auto 12px", color: "#111827" }} />
               No shared dependencies found between these packages
             </div>
           )}
@@ -234,8 +234,8 @@ function CompareContent() {
       )}
 
       {!loading && !sharedDeps && !error && (
-        <div className="glass-card" style={{ padding: 48, textAlign: "center", color: "#475569" }}>
-          <ArrowLeftRight size={32} style={{ margin: "0 auto 12px", color: "#334155" }} />
+        <div className="minimal-card" style={{ padding: 48, textAlign: "center", color: "#374151" }}>
+          <ArrowLeftRight size={32} style={{ margin: "0 auto 12px", color: "#111827" }} />
           Enter two package names to compare
         </div>
       )}
@@ -261,8 +261,8 @@ function SharedDepRow({
         alignItems: "center",
         gap: 14,
         padding: "12px 14px",
-        background: conflict ? "rgba(239,68,68,0.04)" : "rgba(16,185,129,0.04)",
-        border: `1px solid ${conflict ? "rgba(239,68,68,0.12)" : "rgba(16,185,129,0.12)"}`,
+        background: conflict ? ""rgba(0,0,0,0.05)"" : ""rgba(0,0,0,0.05)"",
+        border: `1px solid ${conflict ? ""rgba(0,0,0,0.05)"" : ""rgba(0,0,0,0.05)""}`,
         borderRadius: 10,
       }}
     >
@@ -272,26 +272,26 @@ function SharedDepRow({
         <CheckCircle size={16} color="#10b981" style={{ flexShrink: 0 }} />
       )}
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontWeight: 600, fontSize: 13, color: "#f1f5f9", marginBottom: 2 }}>
+        <div style={{ fontWeight: 600, fontSize: 13, color: "#000000", marginBottom: 2 }}>
           {dep.sharedPackage}
         </div>
         {dep.description && (
-          <div style={{ fontSize: 11, color: "#64748b", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+          <div style={{ fontSize: 11, color: "#6b7280", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
             {dep.description}
           </div>
         )}
       </div>
       <div style={{ display: "flex", gap: 10, flexShrink: 0, alignItems: "center" }}>
         <div style={{ textAlign: "right" }}>
-          <div style={{ fontSize: 10, color: "#475569" }}>{pkgA}</div>
-          <div style={{ fontSize: 12, fontFamily: "var(--font-mono)", color: "#94a3b8" }}>
+          <div style={{ fontSize: 10, color: "#374151" }}>{pkgA}</div>
+          <div style={{ fontSize: 12, fontFamily: "var(--font-mono)", color: "#4b5563" }}>
             {dep.leftVersion || "any"}
           </div>
         </div>
         <div style={{ color: conflict ? "#ef4444" : "#10b981", fontSize: 12 }}>vs</div>
         <div style={{ textAlign: "left" }}>
-          <div style={{ fontSize: 10, color: "#475569" }}>{pkgB}</div>
-          <div style={{ fontSize: 12, fontFamily: "var(--font-mono)", color: "#94a3b8" }}>
+          <div style={{ fontSize: 10, color: "#374151" }}>{pkgB}</div>
+          <div style={{ fontSize: 12, fontFamily: "var(--font-mono)", color: "#4b5563" }}>
             {dep.rightVersion || "any"}
           </div>
         </div>
