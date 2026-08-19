@@ -220,7 +220,3 @@ Set the same 3 environment variables in the Vercel dashboard:
 
 ---
 
-## Submission
-
-Email: **hr@wexa.ai** · Subject: `CognoDB Assignment 2 – <Your Name>`  
-Attach: GitHub repo URL + hosted demo link
