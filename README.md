@@ -1,5 +1,6 @@
 # NPM Blast Radius Explorer
 
+**🚀 Live Demo:** [https://wexa-ai-assignment-nine.vercel.app/](https://wexa-ai-assignment-nine.vercel.app/)
 > **A graph-powered npm dependency analysis tool** — built on [CognoDB](https://console.cognodb.com) (openCypher over Bolt) with Next.js, TypeScript, and react-force-graph-2d.
 
 
