@@ -78,7 +78,7 @@ export function Navbar() {
                   borderRadius: 10,
                   fontSize: 13,
                   fontWeight: isActive ? 600 : 400,
-                  color: isActive ? "#f1f5f9" : "#94a3b8",
+                  color: isActive ? "#000000" : "#4b5563",
                   background: isActive ? "rgba(0,0,0,0.1)" : "transparent",
                   border: isActive ? "1px solid rgba(0,0,0,0.1)" : "1px solid transparent",
                   textDecoration: "none",
