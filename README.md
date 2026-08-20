@@ -2,8 +2,7 @@
 
 > **A graph-powered npm dependency analysis tool** — built on [CognoDB](https://console.cognodb.com) (openCypher over Bolt) with Next.js, TypeScript, and react-force-graph-2d.
 
-**Live demo:** _[Deploy to Vercel — set your env vars and run `npm run seed` first]_  
-**Tech stack:** Next.js 16 (App Router) · TypeScript · CognoDB (Neo4j-compatible) · neo4j-driver · react-force-graph-2d
+
 
 ---
 
