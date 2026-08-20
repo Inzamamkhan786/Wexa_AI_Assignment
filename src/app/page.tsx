@@ -95,8 +95,8 @@ export default function HomePage() {
             display: "inline-flex",
             alignItems: "center",
             gap: 8,
-            background: ""rgba(0,0,0,0.1)"",
-            border: "1px solid "rgba(0,0,0,0.1)"",
+            background: "rgba(0,0,0,0.1)",
+            border: "1px solid rgba(0,0,0,0.1)",
             borderRadius: 9999,
             padding: "6px 16px",
             marginBottom: 24,
@@ -183,8 +183,8 @@ export default function HomePage() {
               style={{
                 fontSize: 12,
                 color: "#000000",
-                background: ""rgba(0,0,0,0.1)"",
-                border: "1px solid "rgba(0,0,0,0.1)"",
+                background: "rgba(0,0,0,0.1)",
+                border: "1px solid rgba(0,0,0,0.1)",
                 borderRadius: 6,
                 padding: "3px 10px",
                 cursor: "pointer",
@@ -249,8 +249,8 @@ export default function HomePage() {
                 style={{
                   width: 38,
                   height: 38,
-                  background: ""rgba(0,0,0,0.1)"",
-                  border: "1px solid "rgba(0,0,0,0.1)"",
+                  background: "rgba(0,0,0,0.1)",
+                  border: "1px solid rgba(0,0,0,0.1)",
                   borderRadius: 10,
                   display: "flex",
                   alignItems: "center",
@@ -340,8 +340,8 @@ export default function HomePage() {
             className="minimal-card"
             style={{
               padding: "28px 32px",
-              background: ""rgba(0,0,0,0.1)"",
-              borderColor: ""rgba(0,0,0,0.1)"",
+              background: "rgba(0,0,0,0.1)",
+              borderColor: "rgba(0,0,0,0.1)",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>

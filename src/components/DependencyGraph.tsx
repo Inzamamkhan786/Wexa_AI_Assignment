@@ -45,7 +45,7 @@ export function DependencyGraph({
   const getNodeColor = useCallback(
     (node: GraphNode) => {
       if (highlightNodes && !highlightNodes.has(node.id)) {
-        return ""rgba(0,0,0,0.1)"";
+        return "rgba(0,0,0,0.1)";
       }
       return NODE_COLORS[node.type] ?? "#3b82f6";
     },
@@ -136,7 +136,7 @@ export function DependencyGraph({
             onClick={onClick}
             style={{
               background: "rgba(15,21,34,0.85)",
-              border: "1px solid "rgba(0,0,0,0.1)"",
+              border: "1px solid rgba(0,0,0,0.1)",
               borderRadius: 8,
               padding: 7,
               cursor: "pointer",

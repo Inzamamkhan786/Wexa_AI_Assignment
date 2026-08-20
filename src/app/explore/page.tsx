@@ -235,7 +235,7 @@ function ExploreContent() {
                       padding: "6px 8px",
                       borderRadius: 8,
                       cursor: "pointer",
-                      background: selectedNode?.id === node.id ? ""rgba(0,0,0,0.1)"" : "transparent",
+                      background: selectedNode?.id === node.id ? "rgba(0,0,0,0.1)" : "transparent",
                       transition: "background 0.15s",
                     }}
                   >

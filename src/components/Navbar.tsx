@@ -79,8 +79,8 @@ export function Navbar() {
                   fontSize: 13,
                   fontWeight: isActive ? 600 : 400,
                   color: isActive ? "#f1f5f9" : "#94a3b8",
-                  background: isActive ? ""rgba(0,0,0,0.1)"" : "transparent",
-                  border: isActive ? "1px solid "rgba(0,0,0,0.1)"" : "1px solid transparent",
+                  background: isActive ? "rgba(0,0,0,0.1)" : "transparent",
+                  border: isActive ? "1px solid rgba(0,0,0,0.1)" : "1px solid transparent",
                   textDecoration: "none",
                   transition: "all 0.2s ease",
                 }}
@@ -97,8 +97,8 @@ export function Navbar() {
           style={{
             fontSize: 11,
             color: "#000000",
-            background: ""rgba(0,0,0,0.05)"",
-            border: "1px solid "rgba(0,0,0,0.05)"",
+            background: "rgba(0,0,0,0.05)",
+            border: "1px solid rgba(0,0,0,0.05)",
             borderRadius: 9999,
             padding: "3px 10px",
             fontWeight: 600,

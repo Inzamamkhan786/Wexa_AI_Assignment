@@ -7,7 +7,7 @@ export function LoadingSpinner({ size = 20, label = "Loading..." }: { size?: num
         style={{
           width: size,
           height: size,
-          border: `2px solid "rgba(0,0,0,0.1)"`,
+          border: `2px solid rgba(0,0,0,0.1)`,
           borderTopColor: "#6366f1",
           borderRadius: "50%",
           animation: "spin 0.8s linear infinite",
@@ -44,7 +44,7 @@ export function PageLoader() {
         style={{
           width: 48,
           height: 48,
-          border: "3px solid "rgba(0,0,0,0.1)"",
+          border: "3px solid rgba(0,0,0,0.1)",
           borderTopColor: "#6366f1",
           borderRadius: "50%",
           animation: "spin 0.8s linear infinite",

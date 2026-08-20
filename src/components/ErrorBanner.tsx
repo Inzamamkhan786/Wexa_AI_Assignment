@@ -14,8 +14,8 @@ export function ErrorBanner({ message, code, onRetry }: ErrorBannerProps) {
   return (
     <div
       style={{
-        background: ""rgba(0,0,0,0.05)"",
-        border: "1px solid "rgba(0,0,0,0.05)"",
+        background: "rgba(0,0,0,0.05)",
+        border: "1px solid rgba(0,0,0,0.05)",
         borderRadius: 14,
         padding: "16px 20px",
         display: "flex",

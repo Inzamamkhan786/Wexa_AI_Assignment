@@ -95,8 +95,8 @@ function CompareContent() {
             style={{
               width: 36,
               height: 36,
-              background: ""rgba(0,0,0,0.05)"",
-              border: "1px solid "rgba(0,0,0,0.05)"",
+              background: "rgba(0,0,0,0.05)",
+              border: "1px solid rgba(0,0,0,0.05)",
               borderRadius: "50%",
               display: "flex",
               alignItems: "center",
@@ -158,9 +158,9 @@ function CompareContent() {
                     <span
                       className="path-node"
                       style={{
-                        borderColor: (node === pkgA || node === pkgB) ? ""rgba(0,0,0,0.05)"" : undefined,
+                        borderColor: (node === pkgA || node === pkgB) ? "rgba(0,0,0,0.05)" : undefined,
                         color: (node === pkgA || node === pkgB) ? "#10b981" : undefined,
-                        background: (node === pkgA || node === pkgB) ? ""rgba(0,0,0,0.05)"" : undefined,
+                        background: (node === pkgA || node === pkgB) ? "rgba(0,0,0,0.05)" : undefined,
                       }}
                     >
                       {node}
@@ -175,7 +175,7 @@ function CompareContent() {
           )}
 
           {!shortestPath && (
-            <div className="minimal-card" style={{ padding: "16px 20px", borderColor: ""rgba(0,0,0,0.05)"", background: ""rgba(0,0,0,0.05)"" }}>
+            <div className="minimal-card" style={{ padding: "16px 20px", borderColor: "rgba(0,0,0,0.05)", background: "rgba(0,0,0,0.05)" }}>
               <div style={{ fontSize: 13, color: "#000000" }}>
                 No direct or indirect dependency path found between these two packages.
               </div>
@@ -261,8 +261,8 @@ function SharedDepRow({
         alignItems: "center",
         gap: 14,
         padding: "12px 14px",
-        background: conflict ? ""rgba(0,0,0,0.05)"" : ""rgba(0,0,0,0.05)"",
-        border: `1px solid ${conflict ? ""rgba(0,0,0,0.05)"" : ""rgba(0,0,0,0.05)""}`,
+        background: conflict ? "rgba(0,0,0,0.05)" : "rgba(0,0,0,0.05)",
+        border: `1px solid ${conflict ? "rgba(0,0,0,0.05)" : "rgba(0,0,0,0.05)"}`,
         borderRadius: 10,
       }}
     >

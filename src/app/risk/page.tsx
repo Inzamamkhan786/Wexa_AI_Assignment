@@ -89,8 +89,8 @@ export default function RiskPage() {
         style={{
           padding: "16px 20px",
           marginBottom: 28,
-          background: ""rgba(0,0,0,0.05)"",
-          borderColor: ""rgba(0,0,0,0.05)"",
+          background: "rgba(0,0,0,0.05)",
+          borderColor: "rgba(0,0,0,0.05)",
           display: "flex",
           gap: 12,
           alignItems: "flex-start",
@@ -138,7 +138,7 @@ export default function RiskPage() {
                   className="glass-card animate-fade-in-up"
                   style={{
                     padding: "18px 22px",
-                    border: isDangerous ? "1px solid "rgba(0,0,0,0.05)"" : undefined,
+                    border: isDangerous ? "1px solid rgba(0,0,0,0.05)" : undefined,
                     cursor: "pointer",
                     transition: "all 0.2s",
                   }}
@@ -236,8 +236,8 @@ export default function RiskPage() {
                           style={{
                             fontSize: 11,
                             color: "#4b5563",
-                            background: ""rgba(0,0,0,0.05)"",
-                            border: "1px solid "rgba(0,0,0,0.05)"",
+                            background: "rgba(0,0,0,0.05)",
+                            border: "1px solid rgba(0,0,0,0.05)",
                             borderRadius: 6,
                             padding: "3px 8px",
                           }}

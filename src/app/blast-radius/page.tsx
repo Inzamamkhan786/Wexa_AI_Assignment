@@ -136,8 +136,8 @@ function BlastRadiusContent() {
           {/* Summary banner */}
           <div
             style={{
-              background: data.results.length > 0 ? ""rgba(0,0,0,0.05)"" : ""rgba(0,0,0,0.05)"",
-              border: `1px solid ${data.results.length > 0 ? ""rgba(0,0,0,0.05)"" : ""rgba(0,0,0,0.05)""}`,
+              background: data.results.length > 0 ? "rgba(0,0,0,0.05)" : "rgba(0,0,0,0.05)",
+              border: `1px solid ${data.results.length > 0 ? "rgba(0,0,0,0.05)" : "rgba(0,0,0,0.05)"}`,
               borderRadius: 14,
               padding: "16px 24px",
               marginBottom: 24,
@@ -212,7 +212,7 @@ function BlastRadiusContent() {
                       style={{
                         padding: "14px 16px",
                         cursor: "pointer",
-                        border: highlightPath === result.pathNodes ? "1px solid "rgba(0,0,0,0.05)"" : undefined,
+                        border: highlightPath === result.pathNodes ? "1px solid rgba(0,0,0,0.05)" : undefined,
                         transition: "all 0.2s",
                       }}
                       onClick={() => setHighlightPath(result.pathNodes)}
@@ -245,7 +245,7 @@ function BlastRadiusContent() {
                                 fontSize: 10,
                                 fontFamily: "var(--font-mono)",
                                 color: node === packageName ? "#ef4444" : "#64748b",
-                                background: node === packageName ? ""rgba(0,0,0,0.05)"" : "rgba(255,255,255,0.04)",
+                                background: node === packageName ? "rgba(0,0,0,0.05)" : "rgba(255,255,255,0.04)",
                                 padding: "2px 6px",
                                 borderRadius: 4,
                               }}
